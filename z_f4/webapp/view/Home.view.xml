@@ -1,0 +1,13 @@
+<mvc:View controllerName="z_f4.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:calendar="sap.ui.unified.calendar">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Label text="Material" labelFor="materialMultiInput" class="sapUiSmallMargin"/>
+					<MultiInput id="materialMultiInput" valueHelpOnly="true" width="60%" valueHelpRequest=".onValueHelp"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
