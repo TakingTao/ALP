@@ -1,0 +1,36 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_ALP_FLIGHT_SRV" xml:lang="en" sap:schema-version="1">
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+                <EntityType Name="HScarr" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Carrid"/>
+                    </Key>
+                    <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Airline" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Carrname" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Airline" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                </EntityType>
+                <EntityType Name="Spfli" sap:semantics="aggregate" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="GeneratedId"/>
+                    </Key>
+                    <Property Name="GeneratedId" Type="Edm.String" Nullable="false" sap:aggregation-role="dimension" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:aggregation-role="dimension" sap:unicode="false" sap:label="Airline" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="Connid" Type="Edm.String" Nullable="false" MaxLength="4" sap:aggregation-role="dimension" sap:unicode="false" sap:label="Flight Number" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="Fltime" Type="Edm.Int32" Nullable="false" sap:aggregation-role="measure" sap:unicode="false" sap:label="Flight time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                </EntityType>
+                <EntityContainer Name="Z_ALP_FLIGHT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="HScarrSet" EntityType="Z_ALP_FLIGHT_SRV.HScarr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                    <EntitySet Name="SpfliSet" EntityType="Z_ALP_FLIGHT_SRV.Spfli" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                </EntityContainer>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/Z_ALP_FLIGHT_SRV/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/Z_ALP_FLIGHT_SRV/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>
